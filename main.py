@@ -7,6 +7,11 @@ from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
 from sklearn.metrics import f1_score
 import numpy as np
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC, LinearSVC
+from sklearn.neural_network import MLPClassifier
 
 def avaliar_modelo(modelo, X, y, c):
     accuracies = []
@@ -30,7 +35,6 @@ def avaliar_modelo(modelo, X, y, c):
         recalls.append(recall_score(y_test, y_pred))
         f1s.append(f1_score(y_test, y_pred))
 
-    print(f"\n=== {modelo.__class__.__name__} ===")
     print(f"Accuracy : {np.mean(accuracies):.4f} ± {np.std(accuracies):.4f}")
     print(f"Precision: {np.mean(precisions):.4f} ± {np.std(precisions):.4f}")
     print(f"Recall   : {np.mean(recalls):.4f} ± {np.std(recalls):.4f}")
@@ -72,5 +76,50 @@ print(X.shape)
 print("\nPrimeiros valores da classe:")
 print(y.head())
 
-modelo = DecisionTreeClassifier(random_state=42)
-avaliar_modelo(modelo, X, y, c)
+print("=== Árvore de Decisão ===")
+avaliar_modelo(
+    DecisionTreeClassifier(random_state=42),
+    X,
+    y,
+    c
+)
+
+print("\n=== KNN ===")
+avaliar_modelo(
+    KNeighborsClassifier(n_neighbors=5),
+    X,
+    y,
+    c
+)
+
+print("\n=== Naive Bayes ===")
+avaliar_modelo(
+    GaussianNB(),
+    X,
+    y,
+    c
+)
+
+print("\n=== Regressão Logística ===")
+avaliar_modelo(
+    LogisticRegression(max_iter=1000, random_state=42),
+    X,
+    y,
+    c
+)
+
+print("\n=== SVM ===")
+avaliar_modelo(
+    LinearSVC(random_state=42),
+    X,
+    y,
+    c
+)
+
+print("\n=== MLP ===")
+avaliar_modelo(
+    MLPClassifier(max_iter=200, random_state=42),
+    X,
+    y,
+    c
+)
