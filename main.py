@@ -1,43 +1,39 @@
-def perceptron(x, w, alpha, esperado):
-   soma = 0
-   for i in range(len(x)):
-        soma += x[i] * w[i]
-      
-        if soma >= 0:
-            saida = 1
-        else:
-            saida = 0
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import StratifiedKFold
 
-        erro = esperado - saida
+df = pd.read_csv("bank-full.csv", sep=";")
 
-        for i in range(len(w)):
-            w[i] = w[i] + alpha * erro * x[i]
-
-        return saida, erro, w
-       
-x = [1, 0, 1]
-
-w = [0.2, -0.1, 0.4]
-
-alpha = 0.1
-
-esperado = 1
-
-saida, erro, novos_pesos = perceptron(x, w, alpha, esperado)
-print("Saída: ", saida)
-print("Erro: ", erro)
-print("Novos pesos: ", novos_pesos)
+X = df.drop("y", axis=1)
+y = df["y"]
 
 
-x = [1, 0, 1]
+y = y.map({
+    "no":0,
+    "yes":1
+})
 
-w = [0.2, -0.1, 0.4]
+X = pd.get_dummies(X, drop_first=True)
+scaler = StandardScaler()
 
-alpha = 0.1
 
-esperado = 0
+c = StratifiedKFold(
+    n_splits=10,
+    shuffle=True,
+    random_state=42
+)
 
-saida, erro, novos_pesos = perceptron(x, w, alpha, esperado)
-print("Saída: ", saida)
-print("Erro: ", erro)
-print("Novos pesos: ", novos_pesos)
+print("Formato de X:")
+print(X.shape)
+
+#print("\nPrimeiras linhas:")
+#print(X.head())
+
+print("\nPrimeiros valores da classe:")
+print(y.head())
+
+for i, (train, test) in enumerate(c.split(X, y), start=1):
+    print(f"Fold {i}")
+    print(f"Treino: {len(train)} exemplos")
+    print(f"Teste : {len(test)} exemplos")
+    print("-" * 30)
