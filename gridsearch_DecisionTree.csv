@@ -1,0 +1,7 @@
+params,mean_test_score,std_test_score,rank_test_score
+"{'modelo__criterion': 'gini', 'modelo__max_depth': 3}",0.46231351362618434,0.06456483323826243,2
+"{'modelo__criterion': 'gini', 'modelo__max_depth': 5}",0.4003886168621424,0.09043617277792358,5
+"{'modelo__criterion': 'gini', 'modelo__max_depth': 10}",0.4709285583985787,0.06283620051649991,1
+"{'modelo__criterion': 'entropy', 'modelo__max_depth': 3}",0.45159589847037857,0.11252108459589266,3
+"{'modelo__criterion': 'entropy', 'modelo__max_depth': 5}",0.3482464703432431,0.11980529878223238,6
+"{'modelo__criterion': 'entropy', 'modelo__max_depth': 10}",0.44035373256355304,0.06985797283716817,4

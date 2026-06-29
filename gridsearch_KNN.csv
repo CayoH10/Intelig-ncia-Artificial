@@ -1,0 +1,4 @@
+params,mean_test_score,std_test_score,rank_test_score
+{'modelo__n_neighbors': 3},0.3622027585252835,0.052110076636726003,1
+{'modelo__n_neighbors': 5},0.35674556337797425,0.07410484455382389,2
+{'modelo__n_neighbors': 7},0.3484265757984641,0.09010963588889145,3

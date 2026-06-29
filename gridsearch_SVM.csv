@@ -1,0 +1,7 @@
+params,mean_test_score,std_test_score,rank_test_score
+"{'modelo__C': 0.1, 'modelo__kernel': 'linear'}",0.3449317681325082,0.07206574230194915,4
+"{'modelo__C': 0.1, 'modelo__kernel': 'rbf'}",0.0,0.0,6
+"{'modelo__C': 1, 'modelo__kernel': 'linear'}",0.3619786501245755,0.08326971002185588,2
+"{'modelo__C': 1, 'modelo__kernel': 'rbf'}",0.3128072715951042,0.08956257467594816,5
+"{'modelo__C': 10, 'modelo__kernel': 'linear'}",0.3619786501245755,0.08326971002185588,2
+"{'modelo__C': 10, 'modelo__kernel': 'rbf'}",0.46562925460635746,0.07224406503487536,1

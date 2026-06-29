@@ -1,0 +1,7 @@
+params,mean_test_score,std_test_score,rank_test_score
+"{'modelo__alpha': 0.0001, 'modelo__hidden_layer_sizes': (50,)}",0.49859627700433384,0.06416505898249754,4
+"{'modelo__alpha': 0.0001, 'modelo__hidden_layer_sizes': (100,)}",0.4986208337351716,0.04690167509621127,3
+"{'modelo__alpha': 0.0001, 'modelo__hidden_layer_sizes': (150,)}",0.4877871069722678,0.05441127632989043,6
+"{'modelo__alpha': 0.001, 'modelo__hidden_layer_sizes': (50,)}",0.5061959182530998,0.06900689717086166,1
+"{'modelo__alpha': 0.001, 'modelo__hidden_layer_sizes': (100,)}",0.49941659449104403,0.043262487213462264,2
+"{'modelo__alpha': 0.001, 'modelo__hidden_layer_sizes': (150,)}",0.4935137347568645,0.05787688954185745,5

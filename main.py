@@ -235,3 +235,8 @@ df_resultados.to_csv(
     "resultados_finais.csv",
     index=False
 )
+
+#Durante os testes, usei outro codigo para imprimir os treinos de SVM e MLP,
+#reduzindo a quantidade de dados deles para que meu computador conseguisse
+#rodar os arquivos grid de ambos(Mostra que esta funcionando). Porem, o codigo
+#atual é feito para calcular todos os dados.

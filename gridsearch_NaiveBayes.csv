@@ -1,0 +1,4 @@
+params,mean_test_score,std_test_score,rank_test_score
+{'modelo__var_smoothing': 1e-09},0.43114121792881,0.06436555156058024,1
+{'modelo__var_smoothing': 1e-08},0.43114121792881,0.06436555156058024,1
+{'modelo__var_smoothing': 1e-07},0.43114121792881,0.06436555156058024,1
